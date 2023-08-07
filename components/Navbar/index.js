@@ -5,7 +5,7 @@ import Link from "next/link";
 import NavLink from "../NavLink";
 import { useRouter, usePathname } from "next/navigation";
 
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 // import Button from "../Button";
 
 export default function Navbar() {
@@ -14,15 +14,15 @@ export default function Navbar() {
   const [token, setToken] = useState("");
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // useEffect(() => {
-  //   return setToken(Cookies.get("token"));
-  // });
+  useEffect(() => {
+    return setToken(Cookies.get("token"));
+  });
 
-  // const handleLogout = () => {
-  //   console.log("click");
-  //   Cookies.remove("token");
-  //   router.push("/");
-  // };
+  const handleLogout = () => {
+    console.log("click");
+    Cookies.remove("token");
+    router.push("/");
+  };
 
   return (
     <nav className="container navbar navbar-expand-lg navbar-dark">

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-sync-scripts */
 /* eslint-disable @next/next/no-css-tags */
+"use client";
 import "../styles/globals.css";
 import "../styles/main.css";
 import Head from "next/head";
