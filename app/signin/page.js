@@ -1,11 +1,25 @@
+"use client";
 import Head from "next/head";
 import Brand from "../../components/Brand";
 import FormSignin from "../../components/FormSignin";
 import Navbar from "../../components/Navbar";
-// import { ToastContainer } from "react-toastify";
-// async function getToken() {}
-
+import React, { useEffect } from "react";
+import Cookies from "js-cookie";
+import { redirect } from "next/navigation";
 export default function Home() {
+  // const token = Cookies.get("token", "value");
+  // console.log("token signin");
+  // console.log(token);
+
+  useEffect(() => {
+    const token = Cookies.get("token");
+    // console.log("token signin");
+    // console.log(token);
+    if (token) {
+      redirect("/");
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -32,19 +46,19 @@ export default function Home() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const { token } = context.req.cookies;
+// export async function getServerSideProps(context) {
+//   const { token } = context.req.cookies;
 
-  if (token) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
+//   if (token) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: {},
-  };
-}
+//   return {
+//     props: {},
+//   };
+// }

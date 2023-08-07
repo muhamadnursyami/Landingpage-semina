@@ -30,7 +30,7 @@ export default function FormSignin() {
       draggable: true,
       progress: undefined,
     });
-    Cookies.set("token", res.data.token);
+    Cookies.set("token", res.data.data.token);
     router.push("/");
   };
 

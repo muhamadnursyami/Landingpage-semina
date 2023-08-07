@@ -12,7 +12,8 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [token, setToken] = useState("");
-
+  // console.log("token Navbar");
+  // console.log(token);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     return setToken(Cookies.get("token"));
@@ -21,7 +22,7 @@ export default function Navbar() {
   const handleLogout = () => {
     console.log("click");
     Cookies.remove("token");
-    router.push("/");
+    router.refresh("/");
   };
 
   return (

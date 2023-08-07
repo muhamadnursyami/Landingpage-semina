@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
 
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         {children}
         <ToastContainer />
       </body>
