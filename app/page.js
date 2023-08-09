@@ -13,8 +13,8 @@ async function getData() {
     cache: "no-store",
   });
   const data = await response.json();
-  return data.data;
   // console.log(data);
+  return data.data;
   // setData(data.data);
 }
 
@@ -44,7 +44,6 @@ export default async function Home() {
       <Stories />
       <Statistics />
       <Footer />
-      
     </>
   );
 }

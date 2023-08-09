@@ -19,7 +19,7 @@ export default function FormSignin() {
   };
 
   const handleSubmit = async () => {
-    const res = await postData("/api/v1/cms/auth/signin", form);
+    const res = await postData("/api/v1/auth/signin", form);
 
     toast.success("berhasil signin", {
       position: "top-right",
